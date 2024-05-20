@@ -5,10 +5,21 @@ export const backgroundLogoURL =
 export const profileLogoURL =
   "https://occ-0-4875-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABXz4LMjJFidX8MxhZ6qro8PBTjmHbxlaLAbk45W1DXbKsAIOwyHQPiMAuUnF1G24CLi7InJHK4Ge4jkXul1xIW49Dr5S7fc.png?r=e6e";
 export const API_option = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGU3YjQ5ZDhiOWJlYWY0YjIzYzI1MzdmY2IwYmQwNSIsInN1YiI6IjY1ZDU4YWU0NWNhNzA0MDE3YzBkNDllMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PnUNFclg-dL3Xh8CKS0C-ikQktoiEs4HJX9wdfW4Lb4'
-  }
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGU3YjQ5ZDhiOWJlYWY0YjIzYzI1MzdmY2IwYmQwNSIsInN1YiI6IjY1ZDU4YWU0NWNhNzA0MDE3YzBkNDllMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PnUNFclg-dL3Xh8CKS0C-ikQktoiEs4HJX9wdfW4Lb4",
+  },
 };
-export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500"
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+export const SUPPORT_LANG = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "hi",
+    name: "Hindi",
+  },
+];

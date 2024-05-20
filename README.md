@@ -22,6 +22,9 @@
   - Get Data from TMDB now playing movies list API
   - fetch TOP RATED movies api
   - fetch POPULAR movies api
+  - GPT page build
+  - gpt search bar
+  - multi language feature
 
 
 # Features

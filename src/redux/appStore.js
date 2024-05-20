@@ -3,12 +3,16 @@ import userReducer from "./userSlice";
 import nowPlayingMoviesReducer from "./nowPlayingMoviesSlice"
 import popularMoviesReducer from "./popularMoviesSlice"
 import topRatedMoviesReducer from "./topRatedMoviesSlice"
+import gptReducer from "./gptSlice"
+import configLangReducer from "./configLangSlice"
  const appStore = configureStore({
     reducer:{
       user:userReducer,
       nowPlayingMoviesList: nowPlayingMoviesReducer,
       popularMoviesList: popularMoviesReducer,
-      topRatedMoviesList: topRatedMoviesReducer
+      topRatedMoviesList: topRatedMoviesReducer,
+      gptScreen: gptReducer,
+      configLang:configLangReducer,
     }
  })
 

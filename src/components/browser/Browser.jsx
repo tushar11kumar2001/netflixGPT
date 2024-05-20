@@ -10,11 +10,12 @@ import SecondaryContainer from "./SecondaryContainer";
 import PrimaryContainer from "./PrimaryContainer";
 import { popularMoviesListThunks } from "../../redux/popularMoviesSlice";
 import { topRatedMoviesListThunk } from "../../redux/topRatedMoviesSlice";
+import GPTScreen from "./GPTScreen";
 const Browser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userobj = useSelector((store) => store.user);
-
+  const gptScreen = useSelector(store=>store.gptScreen.toggleGPTScreen)
   useEffect(() => { if (!userobj?.uid) navigate(ROOT.LOGIN) }, [userobj]);
   useEffect(() => {
     dispatch(nowPlayingMoviesListThunks());
@@ -28,8 +29,11 @@ const Browser = () => {
   return (
     <div className="">
       <Header userobj={userobj} />
+      {gptScreen ? <GPTScreen/> : <>
       <PrimaryContainer />
       <SecondaryContainer />
+      </>}
+
     </div>
   );
 };
