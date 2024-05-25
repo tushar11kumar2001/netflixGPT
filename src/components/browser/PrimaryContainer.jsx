@@ -15,7 +15,7 @@ const PrimaryContainer = () => {
     if (!idx) setIdx(Math.floor(Math.random() * movies.length));
     setMainMovie(movies[idx]);
     if (mainMovie) logo(mainMovie.id).then((data) => { setImage(data) })
-  }, [movies])
+  })
   // console.log(image);
 
 

@@ -23,3 +23,5 @@ export const SUPPORT_LANG = [
     name: "Hindi",
   },
 ];
+export const OPENAI_KEY = "AIzaSyBQUtu5_jql17OXOhQ_5wy8j9vZ6dTtIpU";
+export const Loader = "https://media.giphy.com/media/cMQopWp5e3YyP1lMrc/giphy.gif"

@@ -25,6 +25,7 @@
   - GPT page build
   - gpt search bar
   - multi language feature
+  - Google Generative AI
 
 
 # Features

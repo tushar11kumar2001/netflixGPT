@@ -5,10 +5,10 @@ import { backgroundLogoURL } from '../../utils/constant'
 
 const GPTScreen = () => {
   return (
-    <div className='pt-[10%]'>
-        <div className="absolute top-0 -z-10 ">
+    <div className='pt-[10%] bg-black bg-opacity-70  h-screen'>
+        {/* <div className="absolute top-0 -z-10 ">
             <img className="h-screen w-screen"  src={backgroundLogoURL} alt="background image" />
-        </div>
+        </div> */}
       <GPTSearchBar/>
       <SuggestionMovies/>
     </div>

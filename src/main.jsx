@@ -8,7 +8,7 @@ import appStore from "./redux/appStore.js";
 import FirebaseContextProvider from "./utils/firebaseContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+
     <Provider store={appStore}>
       <BrowserRouter>
         <FirebaseContextProvider>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </FirebaseContextProvider>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>
+
 );
