@@ -15,55 +15,37 @@ This repository contains a modern web application built with Vite and Tailwind C
           - **Sign-in Page (English and Hindi)**: Multi-language support for the sign-in process.
           - **Registration Page (English and Hindi)**: Multi-language support for user registration.
           - **GPT Search Bar**: A search bar powered by GPT for enhanced user interaction.
-Setup Instructions
-Install Vite and Tailwind CSS:
+          
+## Setup Instructions
+  - 1. Install Vite and Tailwind CSS:
 
-bash
-Copy code
-npm create vite@latest
-cd your-project-name
-npm install
-npm install -D tailwindcss
-npx tailwindcss init
-Tailwind CSS Configuration:
-Configure Tailwind in tailwind.config.js and add to index.css.
+     - npm create vite@latest
+     - cd your-project-name
+     - npm install
+     - npm install -D tailwindcss
+     - npx tailwindcss init
+     
+  - 2. Tailwind CSS Configuration:
+     - Configure Tailwind in tailwind.config.js and add to index.css.
 
-Routing:
-Setup routing using React Router.
+  - 3. Routing:
+    - Setup routing using React Router.
 
-Form Validation:
-Implement email and password validation using useRef.
-
-Redux Store Configuration:
-
-js
-Copy code
-// configureStore.js
-import { configureStore } from '@reduxjs/toolkit';
-import userSlice from './userSlice';
-
-const store = configureStore({
-    reducer: {
-        user: userSlice,
-    },
-});
-
-export default store;
-TMDB API Integration:
+  - 4. TMDB API Integration:
 Register for a TMDB API key, then create an app and get an access token. Use the token to fetch movie data.
 
-Google Generative AI:
+  - 5. Google Generative AI:
 Integrate Google Generative AI for additional features.
 
-Usage
-Sign In and Registration:
-Users can sign in and register, with support for English and Hindi languages.
+## Usage
+   - **Sign In and Registration**:
+       - Users can sign in and register, with support for English and Hindi languages.
 
-Movie Data:
-Fetch and display now playing, top-rated, and popular movies using the TMDB API.
+   - **Movie Data**:
+       - Fetch and display now playing, top-rated, and popular movies using the TMDB API.
 
-GPT Search:
-Utilize the GPT search bar for intelligent querying and interactions.
+   - **GPT Search**:
+       - Utilize the GPT search bar for intelligent querying and interactions.
 
-Contributions
-Contributions are welcome! Please submit a pull request or open an issue for any features or bug fixes.
+## Contributions
+   - Contributions are welcome! Please submit a pull request or open an issue for any features or bug fixes.
