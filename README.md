@@ -1,3 +1,4 @@
+# NETFLIX-GPT
 This repository contains a modern web application built with Vite and Tailwind CSS, featuring user authentication and multi-language support. The app integrates with TMDB API to fetch movie data and includes functionalities powered by Google Generative AI.
 
 ## Features
@@ -17,7 +18,7 @@ This repository contains a modern web application built with Vite and Tailwind C
           - **GPT Search Bar**: A search bar powered by GPT for enhanced user interaction.
           
 ## Setup Instructions
-  - 1. Install Vite and Tailwind CSS:
+  - 1. **Install Vite and Tailwind CSS:**
 
      - npm create vite@latest
      - cd your-project-name
@@ -25,16 +26,16 @@ This repository contains a modern web application built with Vite and Tailwind C
      - npm install -D tailwindcss
      - npx tailwindcss init
      
-  - 2. Tailwind CSS Configuration:
+  - 2. **Tailwind CSS Configuration:**
      - Configure Tailwind in tailwind.config.js and add to index.css.
 
-  - 3. Routing:
+  - 3. **Routing:**
     - Setup routing using React Router.
 
-  - 4. TMDB API Integration:
+  - 4. **TMDB API Integration:**
 Register for a TMDB API key, then create an app and get an access token. Use the token to fetch movie data.
 
-  - 5. Google Generative AI:
+  - 5. **Google Generative AI:**
 Integrate Google Generative AI for additional features.
 
 ## Usage
