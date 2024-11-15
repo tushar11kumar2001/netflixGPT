@@ -1,11 +1,11 @@
 import Header from "./Header";
-import formValidation from "../utils/formvalidation";
+import formValidation from "../../utils/formvalidation.js";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ROOT } from "../../route";
-import { useFirebaseContext } from "../utils/firebaseContext.jsx";
+import { ROOT } from "../../../route.js";
+import { useFirebaseContext } from "../../utils/firebaseContext.jsx";
 import { useSelector } from "react-redux";
-import { backgroundLogoURL } from "../utils/constant";
+import { backgroundLogoURL } from "../../utils/constant.js";
 
 const Login = () => {
   const firebaseContext = useFirebaseContext();

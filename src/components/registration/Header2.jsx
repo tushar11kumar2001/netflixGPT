@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { ROOT } from "../../../route";
+import { ROOT } from "../../../route.js";
 import { useFirebaseContext } from "../../utils/firebaseContext.jsx";
 const Header2 = ({ btn }) => {
   const navigate = useNavigate();

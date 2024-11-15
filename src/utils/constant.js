@@ -20,7 +20,7 @@ export const SUPPORT_LANG = [
   },
   {
     identifier: "hi",
-    name: "Hindi",
+    name: "हिन्दी",
   },
 ];
 export const OPENAI_KEY = "AIzaSyBQUtu5_jql17OXOhQ_5wy8j9vZ6dTtIpU";

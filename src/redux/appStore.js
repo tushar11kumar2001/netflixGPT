@@ -6,7 +6,7 @@ import topRatedMoviesReducer from "./topRatedMoviesSlice"
 import gptReducer from "./gptSlice"
 import configLangReducer from "./configLangSlice"
 import suggestMoviesReducers from "./suggestMoviesSlice"
-// import suggestMoviesDataReducers from "./suggestMoviesDataSlice"
+
  const appStore = configureStore({
     reducer:{
       user:userReducer,
@@ -16,7 +16,7 @@ import suggestMoviesReducers from "./suggestMoviesSlice"
       gptScreen: gptReducer,
       configLang:configLangReducer,
       suggestedMovies: suggestMoviesReducers,
-      // suggestedMoviesData: suggestMoviesDataReducers
+     
     }
  })
 

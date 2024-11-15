@@ -1,5 +1,6 @@
 
-import Header from "../Header";
+
+import Header from "../login/Header";
 import Main from "./Main";
 const SignUpHI = () => {
   return (

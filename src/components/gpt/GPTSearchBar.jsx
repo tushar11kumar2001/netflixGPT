@@ -4,17 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { run } from '../../utils/geminiAIConfig'
 import { addMovies, emptyMovieData, updateLoading } from '../../redux/suggestMoviesSlice'
 
-const GPTSearchBar = () => {
+const GPTSearchBar = ({lang}) => {
   const dispatch = useDispatch();
-  const lang = useSelector(store => store.configLang.Language)
   const searchRef = useRef();
-  function handlegeminiAI(query) {
-    dispatch(emptyMovieData())
+  const handlegeminiAI = (query) => {
+
     dispatch(updateLoading())
     run(query).then((response) => {
       const arr = response.split(",");
       dispatch(addMovies(arr));
-      dispatch(updateLoading())
+      dispatch(updateLoading());
       
 
     })

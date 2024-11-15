@@ -12,12 +12,12 @@ const suggestMoviesSlice = createSlice({
             state.moviesList = action.payload
         },
         addMoviesData:(state,action)=>{
-            // if(state.movieData[state.movieData.length - 1]?.name !== action.payload?.name) 
                 state.movieData.push(action.payload);
     
         },
         emptyMovieData:(state)=>{
-            state.movieData = [];
+            state.moviesList.length = 0;
+            state.movieData.length = 0;
         },
         updateLoading:(state)=>{
                state.loading = !state.loading

@@ -10,12 +10,17 @@ import SecondaryContainer from "./SecondaryContainer";
 import PrimaryContainer from "./PrimaryContainer";
 import { popularMoviesListThunks } from "../../redux/popularMoviesSlice";
 import { topRatedMoviesListThunk } from "../../redux/topRatedMoviesSlice";
-import GPTScreen from "./GPTScreen";
+import GPTScreen from "../gpt/GPTScreen";
+
 const Browser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userobj = useSelector((store) => store.user);
-  const gptScreen = useSelector(store=>store.gptScreen.toggleGPTScreen)
+  const lang = useSelector(store=>store.configLang.Language)
+
+
+  // console.log("userobj", userobj)
+  const gptScreen = useSelector(store => store.gptScreen.toggleGPTScreen)
   useEffect(() => { if (!userobj?.uid) navigate(ROOT.LOGIN) }, [userobj]);
   useEffect(() => {
     dispatch(nowPlayingMoviesListThunks());
@@ -28,11 +33,18 @@ const Browser = () => {
 
   return (
     <div className="">
-      <Header userobj={userobj} />
-      {gptScreen ? <GPTScreen/> : <>
-      <PrimaryContainer />
-      <SecondaryContainer />
-      </>}
+      <div className="fixed z-10 w-full"> 
+      <Header userobj={userobj} lang={lang}/>
+      </div>
+  
+      {
+        gptScreen ?
+          <GPTScreen lang={lang}/> :
+          <>
+            <PrimaryContainer lang={lang}/>
+            <SecondaryContainer lang={lang}/>
+          </>
+      }
 
     </div>
   );

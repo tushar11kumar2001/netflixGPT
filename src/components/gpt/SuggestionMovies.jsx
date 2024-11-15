@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { searchMovies } from '../../utils/searchMovies'
-import MovieCard from './MovieCard'
+import MovieCard from '../browser/MovieCard'
 import { addMoviesData, emptyMovieData } from '../../redux/suggestMoviesSlice'
 
 import { Loader } from '../../utils/constant'
@@ -29,7 +29,13 @@ const SuggestionMovies = () => {
 
     <div className='flex gap-10 justify-center mt-16'>
 
-     {loading?<img src={Loader} className='w-32' alt="" />  : suggestedMoviesData.length? suggestedMoviesData.map((m)=> <MovieCard key={m.name} poster={m.poster} name={m.name}/>):""}
+     {
+     loading?
+     <img src={Loader} className='w-32' alt="" />  :
+      suggestedMoviesData.length ? 
+      suggestedMoviesData.map((m)=> <MovieCard key={m.name} poster={m.poster} name={m.name}/>) :
+      ""
+      }
     </div>
 
   )

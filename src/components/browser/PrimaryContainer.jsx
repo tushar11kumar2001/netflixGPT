@@ -4,7 +4,7 @@ import VideoTitle from './VideoTitle';
 import VideoBackground from './VideoBackground';
 import { logo } from '../../utils/getNowPlayingMovies';
 
-const PrimaryContainer = () => {
+const PrimaryContainer = ({lang}) => {
   const [idx, setIdx] = useState(null);
   const [image, setImage] = useState(null);
   const [mainMovie, setMainMovie] = useState(null);
@@ -20,9 +20,9 @@ const PrimaryContainer = () => {
 
 
   return (
-    <div className='relative overflow-x-hidden'>
-      {mainMovie && <VideoTitle title={mainMovie?.original_title} description={mainMovie?.overview} img={image} />}
-     {mainMovie && <VideoBackground id={mainMovie?.id}/>}
+    <div className='relative overflow-x-hidden '>
+      {mainMovie && <VideoTitle title={mainMovie?.original_title} description={mainMovie?.overview} img={image} lang={lang}/>}
+      {mainMovie && <VideoBackground id={mainMovie?.id} />}
     </div>
   )
 }
