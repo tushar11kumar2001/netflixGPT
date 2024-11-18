@@ -34,7 +34,7 @@ const Browser = () => {
   return (
     <div className="">
       <div className="fixed z-10 w-full"> 
-      <Header userobj={userobj} lang={lang}/>
+      <Header userobj={userobj}/>
       </div>
   
       {

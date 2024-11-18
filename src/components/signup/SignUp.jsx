@@ -1,13 +1,22 @@
 
 
+import { backgroundLogoURL } from "../../utils/constant";
 import Header from "../login/Header";
 import Main from "./Main";
 
 const SignUp = () => {
   return (
-    <div>
-      <Header />
-      <Main lang="हिन्दी" sign="Sign In" heading="Unlimited movies, TV shows and more" para1=" Watch anywhere. Cancel anytime." para2="Ready to watch? Enter your email to create or restart your membership." btn="Get Started >"/>
+    <div className=' h-screen relative'
+    style={{backgroundImage:`url(${backgroundLogoURL})`}}>
+    
+    <div className="bg-black bg-opacity-65 w-full h-full absolute "></div>
+      
+     <div className="absolute w-full">
+     <Header />
+     </div>
+      <div className="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
+      <Main/>
+      </div>
     </div>
   );
 };

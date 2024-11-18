@@ -7,7 +7,7 @@ import { toggle } from '../../redux/gptSlice';
 import { changeLanguage } from '../../redux/configLangSlice';
 
 
-const Header = ({ userobj, lang}) => {
+const Header = ({ userobj}) => {
     // const [photoURL, setPhotoURL] = useState(null);
     const firebaseContext = useFirebaseContext()
     const gptScreen = useSelector(store => store.gptScreen.toggleGPTScreen)
@@ -31,7 +31,7 @@ const Header = ({ userobj, lang}) => {
 
                 <select
                     onChange={handleLangChange}
-                    className={` rounded-md  text-md px-2 h-8 border-none outline-none ${gptScreen ? "bg-black bg-opacity-70 text-white" : "bg-gray-300 text-black"}`}>
+                    className={` rounded-md  text-md px-2 h-8  outline-none ${gptScreen ? "bg-black bg-opacity-70 text-white border-2 border-white" : "bg-gray-300 text-black"}`}>
                     {
                         SUPPORT_LANG.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)
                     }

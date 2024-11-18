@@ -6,6 +6,7 @@ import { ROOT } from "../../../route.js";
 import { useFirebaseContext } from "../../utils/firebaseContext.jsx";
 import { useSelector } from "react-redux";
 import { backgroundLogoURL } from "../../utils/constant.js";
+import { language } from "../../utils/language.js";
 
 const Login = () => {
   const firebaseContext = useFirebaseContext();
@@ -15,13 +16,15 @@ const Login = () => {
   const [valid, setValid] = useState(null);
   const [showPassword,setShowPassword] = useState(false);
   const userObj = useSelector((store) => store.user);
-
+  const lang = useSelector(store => store.configLang.Language)
   useEffect(()=>{ if(userObj?.uid) navigate(ROOT.BROWSER) },[userObj])
-  const handleShowPassword = ()=>{
-    setShowPassword(!showPassword)
-  }
+
+  const handleShowPassword = ()=>{setShowPassword(!showPassword)}
+
   const handlevalid = () => {
-    const message = formValidation(email.current.value, password.current.value);
+    let message = formValidation(email.current.value, password.current.value);
+    if(message == "invalid email") message = language[lang].email_validation_message;
+    else message = language[lang].password_validation_message
     setValid(message);
     if (message) return;
     firebaseContext.login(email.current.value,password.current.value,setValid);
@@ -29,31 +32,32 @@ const Login = () => {
   };
   return (
 
-        <div className="">
-          <Header />
-          <div className="absolute">
-            <img className="" src={backgroundLogoURL} alt="background image" />
+        <div className="relative h-screen "
+          style={{backgroundImage:`url(${backgroundLogoURL})`}}
+        >
+          <div className="bg-black bg-opacity-65 w-full h-full absolute "></div>
+
+          <div className="absolute w-full">
+          <Header /> 
           </div>
 
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-            className="bg-black absolute w-3/12 my-36 mx-auto left-0 right-0 p-12 text-white bg-opacity-80 rounded-lg z-20"
+            onSubmit={(e) => {e.preventDefault()}}
+            className="absolute  left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] bg-black w-3/12 p-12 text-white bg-opacity-80 rounded-lg "
           >
-            <h1 className="font-medium mb-6 text-3xl">Sign In</h1>
+            <h1 className="font-medium mb-6 text-3xl">{language[lang].sign_in}</h1>
             <input
               ref={email}
               className="w-full p-4 my-4 bg-gray-600 rounded-lg outline-none hover:border-2 border-red-800"
               type="text"
-              placeholder="Email Address"
+              placeholder={language[lang].enter_email}
             />
             <div className="flex justify-between items-center pr-3  w-full  my-4 bg-gray-600 rounded-lg hover:border-2 border-red-800">
             <input
               ref={password}
               className="p-4 w-11/12  bg-gray-600 rounded-lg outline-none "
               type={showPassword?"text":"password"}
-              placeholder="Password"
+              placeholder={language[lang].password}
             />
             {showPassword?<i className="fa-solid fa-eye-slash cursor-pointer" onClick={handleShowPassword}></i>: <i className="fa-solid fa-eye cursor-pointer" onClick={handleShowPassword}></i>}
            
@@ -63,7 +67,7 @@ const Login = () => {
               className="w-full p-4 my-6 bg-red-600 rounded-lg "
               onClick={handlevalid}
             >
-              Sign In
+              {language[lang].sign_in}
             </button>
 
             <p className="py-4">
@@ -74,7 +78,7 @@ const Login = () => {
                   navigate(ROOT.SIGNUP);
                 }}
               >
-                Sign Up Now
+                {language[lang].sign_up}
               </span>
             </p>
           </form>

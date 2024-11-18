@@ -6,7 +6,17 @@ export const language = {
         top_rated:"Top Rated",
         popular:"Popular",
         upcoming:"Upcoming",
-        now_playing:"Now Playing"
+        now_playing:"Now Playing",
+        sign_in:"Sign In",
+        enter_email:"Enter Your email",
+        password:"Password",
+        sign_up:"Sign Up Now",
+        sign_up_main_heading:"Unlimited movies, TV shows and more",
+        sign_up_second_heading:"Watch anywhere. Cancel anytime.",
+        sign_up_third_heading:"Ready to watch? Enter your email to create or restart your membership.",
+        get_started:"Get Started >",
+        email_validation_message:"Please enter a valid Email !",
+        password_validation_message:"Please enter a Stronge passwaord"
     },
     hi :{
        search:"खोज",
@@ -15,6 +25,16 @@ export const language = {
        top_rated:"टॉप रेटेड",
        popular:"लोकप्रिय",
        upcoming:"आगामी",
-       now_playing:"चल रही"
+       now_playing:"चल रही",
+       sign_in:"साइन इन",
+       enter_email:"अपना ईमेल दर्ज करें",
+       password:"पासवर्ड",
+       sign_up:"साइन अप करें",
+       sign_up_main_heading:"अनलिमिटेड फ़िल्में, टीवी शो के साथ भी बहुत कुछ",
+       sign_up_second_heading:"जहां चाहें देखें. जब चाहें कैंसल करें.",
+       sign_up_third_heading:"देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए",
+       get_started:"शुरू करें >",
+       email_validation_message:"कृपया एक मान्य ईमेल दर्ज करें !",
+       password_validation_message:"कृपया एक वैध पासवर्ड दर्ज करें।"
     } 
 }

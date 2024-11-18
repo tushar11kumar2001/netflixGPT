@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
-import SignUpHI from "./components/signup/SignUpHI";
 import Registration from "./components/registration/Registration";
 import RegistrationHI from "./components/registration/RegistrationHI";
 import RegistrationForm from "./components/registration/RegistrationForm";
@@ -23,7 +22,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />,
           <Route path="/in/" element={<SignUp />} />
-          <Route path="/in-hi/" element={<SignUpHI />} />
           <Route path="/signup/registration" element={<Registration />} />,
           {/* <Route path="/signup/registration-hi" element={<RegistrationHI />} />, */}
           <Route path="/signup/regform" element={<RegistrationForm />} />,
