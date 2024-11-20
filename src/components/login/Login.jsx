@@ -22,9 +22,11 @@ const Login = () => {
   const handleShowPassword = ()=>{setShowPassword(!showPassword)}
 
   const handlevalid = () => {
+
+    
     let message = formValidation(email.current.value, password.current.value);
     if(message == "invalid email") message = language[lang].email_validation_message;
-    else message = language[lang].password_validation_message
+    else if(message == "invalid password") message = language[lang].password_validation_message
     setValid(message);
     if (message) return;
     firebaseContext.login(email.current.value,password.current.value,setValid);
@@ -57,7 +59,7 @@ const Login = () => {
               ref={password}
               className="p-4 w-11/12  bg-gray-600 rounded-lg outline-none "
               type={showPassword?"text":"password"}
-              placeholder={language[lang].password}
+              placeholder={language[lang].enter_password}
             />
             {showPassword?<i className="fa-solid fa-eye-slash cursor-pointer" onClick={handleShowPassword}></i>: <i className="fa-solid fa-eye cursor-pointer" onClick={handleShowPassword}></i>}
            

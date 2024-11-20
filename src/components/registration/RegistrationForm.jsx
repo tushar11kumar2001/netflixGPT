@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Header2 from "./Header2";
+// import Header2 from "./Header2";
 import { EmailContext } from "../../utils/emailContext";
 import { useContext } from "react";
 import formValidation from "../../utils/formvalidation";
@@ -10,10 +10,12 @@ import { useNavigate } from "react-router-dom";
 
 import { ROOT } from "../../../route";
 import { useFirebaseContext } from "../../utils/firebaseContext";
+import { language } from "../../utils/language";
 
 
 const RegistrationForm = () => {
   const firebaseContext = useFirebaseContext();
+  const lang = useSelector(store => store.configLang.Language);
   const { email } = useContext(EmailContext);
   const [useremail, setUserEmail] = useState(email);
   const [isvalid, setValid] = useState(null);
@@ -23,7 +25,6 @@ const RegistrationForm = () => {
   const nameref = useRef(null);
   const navigate = useNavigate();
   const userobj = useSelector((store) => store.user);
- 
   const [profileImg,setProfileImg] = useState(null);
 
   function handleValid() {
@@ -40,14 +41,14 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      <Header2 btn={hide === false ? "Sign In" : "Sign Out"} />
+      {/* <Header2 btn={hide === false ? "Sign In" : "Sign Out"} /> */}
       {!hide && (
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-5">
           <h1 className="text-4xl font-semibold text-gray-800">
-            Create a password to start your membership
+         {language[lang].registration_form_title}
           </h1>
           <p className="text-xl text-gray-700">
-            Just a few more steps and you're done! We hate paperwork, too
+          {language[lang].registration_form_heading}
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -57,13 +58,13 @@ const RegistrationForm = () => {
               ref={nameref}
               type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder="Enter your name"
+              placeholder={language[lang].enter_name}
             />
             <input
               ref={emailref}
               type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder="Email address"
+              placeholder={language[lang].enter_email}
               value={useremail}
               onChange={(e) => {
                 setUserEmail(e.target.value);
@@ -71,9 +72,9 @@ const RegistrationForm = () => {
             />
             <input
               onChange={(e)=>setPassword(e.target.value)}
-              type="password"
+              type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder="Add a password"
+              placeholder={language[lang].enter_password}
             />
             <p className="text-red-600 font-medium">{isvalid}</p>
             {/* <label htmlFor="profileImg001">Add profile image</label>
@@ -83,7 +84,7 @@ const RegistrationForm = () => {
               className="h-16 bg-red-700 rounded text-white font-normal text-2xl"
               onClick={handleValid}
             >
-              Next
+             {language[lang].next}
             </button>
           </form>
         </div>
@@ -93,10 +94,10 @@ const RegistrationForm = () => {
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-10">
           <div>
             <h1 className="text-5xl font-semibold text-gray-800 mb-5">
-              Account Created
+              {language[lang].account_created}
             </h1>
             <p className="text-gray-800">
-              Use this email to access to your account
+              {language[lang].use_email_to_access}
             </p>
           </div>
           <p className="font-semibold text-lg text-green-700">
@@ -108,7 +109,7 @@ const RegistrationForm = () => {
               navigate(ROOT.BROWSER);
             }}
           >
-            Continue
+            {language[lang].continue}
           </button>
         </div>
       )}

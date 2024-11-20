@@ -1,6 +1,9 @@
 export const language = {
     en : {
+        next:"Next",
         search:"Search",
+        enter_name:"Enter Your Name",
+        continue:"Continue",
         gptPlaceHolder:"What would you like to watch ?",
         play:"Play",
         top_rated:"Top Rated",
@@ -9,17 +12,28 @@ export const language = {
         now_playing:"Now Playing",
         sign_in:"Sign In",
         enter_email:"Enter Your email",
-        password:"Password",
+        enter_password:"Password",
         sign_up:"Sign Up Now",
         sign_up_main_heading:"Unlimited movies, TV shows and more",
         sign_up_second_heading:"Watch anywhere. Cancel anytime.",
         sign_up_third_heading:"Ready to watch? Enter your email to create or restart your membership.",
         get_started:"Get Started >",
         email_validation_message:"Please enter a valid Email !",
-        password_validation_message:"Please enter a Stronge passwaord"
+        password_validation_message:"Please enter a Stronge passwaord",
+        registration_title:"Finish setting up your account",
+        registration_paragraph:"Netflix is personalised for you. Create a password to watch on any device at any time.",
+        registration_form_title:"Create a password to start your membership",
+        registration_form_heading:"Just a few more steps and you're done! We hate paperwork, too",
+        account_created:"Account Created",
+        use_email_to_access:"Use this email to access to your account",
+        
+       
     },
     hi :{
+       next:"आगे बढ़ें",
        search:"खोज",
+       enter_name:"अपना नाम दर्ज करें",
+       continue:"जारी रखें",
        gptPlaceHolder:"आप क्या देखना पसंद करेंगे?",
        play:"शुरू करें",
        top_rated:"टॉप रेटेड",
@@ -28,13 +42,19 @@ export const language = {
        now_playing:"चल रही",
        sign_in:"साइन इन",
        enter_email:"अपना ईमेल दर्ज करें",
-       password:"पासवर्ड",
+       enter_password:"पासवर्ड",
        sign_up:"साइन अप करें",
        sign_up_main_heading:"अनलिमिटेड फ़िल्में, टीवी शो के साथ भी बहुत कुछ",
        sign_up_second_heading:"जहां चाहें देखें. जब चाहें कैंसल करें.",
        sign_up_third_heading:"देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए",
        get_started:"शुरू करें >",
        email_validation_message:"कृपया एक मान्य ईमेल दर्ज करें !",
-       password_validation_message:"कृपया एक वैध पासवर्ड दर्ज करें।"
+       password_validation_message:"कृपया एक वैध पासवर्ड दर्ज करें।",
+       registration_title:"अपनी अकाउंट सेटिंग पूरी करें",
+       registration_paragraph:"Netflix को आपके लिए पर्सनलाईज़ किया गया है. किसी भी समय किसी भी डिवाइस पर देखने के लिए पासवर्ड बनाएं.",
+       registration_form_title:"अपनी सदस्यता शुरू करने के लिए पासवर्ड बनाएं",
+       registration_form_heading:"बस कुछ ही कदम और बचे हैं, और आप तैयार हैं! हमें भी कागजी काम पसंद नहीं।",
+       account_created:"खाता बनाया गया",
+       use_email_to_access:"अपने खाते तक पहुंचने के लिए इस ईमेल का उपयोग करें"
     } 
 }

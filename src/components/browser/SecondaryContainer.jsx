@@ -6,7 +6,7 @@ const SecondaryContainer = ({lang}) => {
   const popularMovies = useSelector(store => store.popularMoviesList)
   const topRatedMovies = useSelector(store => store.topRatedMoviesList)
   return (
-    <div className="bg-black bg-opacity-95 text-white ">
+    <div className="bg-black  text-white ">
       <div className="relative -mt-32 ">
         <MovieList title={language[lang].now_playing} movies={nowPlayingMovies.data} />
         <MovieList title={language[lang].top_rated}  movies={topRatedMovies.data} />

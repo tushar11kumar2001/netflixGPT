@@ -33,7 +33,7 @@ const Browser = () => {
 
   return (
     <div className="">
-      <div className="fixed z-10 w-full"> 
+      <div className="fixed z-20 w-full"> 
       <Header userobj={userobj}/>
       </div>
   

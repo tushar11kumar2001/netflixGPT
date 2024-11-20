@@ -8,11 +8,15 @@ import { language } from "../../utils/language";
 const Header = () => {
   const dispatch = useDispatch();
   const current_path = useLocation();
-  console.log("current path :- ",current_path);
+ 
   
   const navigate = useNavigate()
   const lang = useSelector(store => store.configLang.Language)
-  const handleLangChange = (e) => dispatch(changeLanguage(e.target.value))
+  const handleLangChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+    localStorage.setItem("language",e.target.value);
+
+  }
   return (
     <div className="w-full flex justify-between items-center  pl-44 pr-10 py-2">
       <img className=" w-44 h-20 " src={logoURL} alt="netflix logo" />

@@ -2,19 +2,21 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import Registration from "./components/registration/Registration";
-import RegistrationHI from "./components/registration/RegistrationHI";
 import RegistrationForm from "./components/registration/RegistrationForm";
 import { EmailContext } from "./utils/emailContext";
 import { useEffect, useState } from "react";
 import Browser from "./components/browser/Browser";
 import { useFirebaseContext } from "./utils/firebaseContext";
+import { useDispatch } from "react-redux";
+import { changeLanguage } from "./redux/configLangSlice";
 
 function App() {
   const [email, setEmail] = useState("");
   const firebaseContext = useFirebaseContext();
-
+  const dispatch = useDispatch();
   useEffect(() => {
   firebaseContext.authChanged();
+   dispatch(changeLanguage(localStorage.getItem("language")))
   }, []);
   return (
     <div className="">
@@ -23,7 +25,6 @@ function App() {
           <Route path="/" element={<Login />} />,
           <Route path="/in/" element={<SignUp />} />
           <Route path="/signup/registration" element={<Registration />} />,
-          {/* <Route path="/signup/registration-hi" element={<RegistrationHI />} />, */}
           <Route path="/signup/regform" element={<RegistrationForm />} />,
           <Route path="/browser" element={<Browser />} />
         </Routes>
