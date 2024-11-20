@@ -75,7 +75,7 @@ const Header = ({ userobj}) => {
                             className=" py-3 pl-3 border border-white hover:bg-red-600"
                             onClick={handlelogout}
                         >
-                            Sign Out of netflix
+                            Sign Out of Netflix
                         </li>
                     </ul>
                 </div>
