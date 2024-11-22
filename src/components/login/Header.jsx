@@ -7,12 +7,11 @@ import { language } from "../../utils/language";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const current_path = useLocation();
- 
-  
   const navigate = useNavigate()
+  const current_path = useLocation();
   const lang = useSelector(store => store.configLang.Language)
-  const handleLangChange = (e) => {
+
+  const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
     localStorage.setItem("language",e.target.value);
 
@@ -22,8 +21,8 @@ const Header = () => {
       <img className=" w-44 h-20 " src={logoURL} alt="netflix logo" />
 
       <div className="flex gap-10 items-center">
-        <select name="" id=""
-          onChange={handleLangChange}
+        <select name="Language_Drop_Down" id=""
+          onChange={handleLanguageChange}
           className="rounded-md  text-md px-2 h-8 text-white outline-none border-2 border-white bg-black bg-opacity-70 ">
           {
             SUPPORT_LANG.map((lang, idx) => <option value={lang.identifier} key={idx}>{lang.name}</option>)

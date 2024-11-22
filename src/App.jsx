@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import Registration from "./components/registration/Registration";
@@ -15,6 +15,7 @@ function App() {
   const [email, setEmail] = useState("");
   const firebaseContext = useFirebaseContext();
   const dispatch = useDispatch();
+  const current_location = useLocation();
   useEffect(() => {
   firebaseContext.authChanged();
    dispatch(changeLanguage(localStorage.getItem("language")))
@@ -30,7 +31,7 @@ function App() {
           <Route path="/browser" element={<Browser />} />
         </Routes>
       </EmailContext.Provider>
-      <Footer/>
+      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer/> :""}
     </div>
   );
 }

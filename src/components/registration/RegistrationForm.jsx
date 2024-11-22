@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { EmailContext } from "../../utils/emailContext";
 import { useContext } from "react";
-import formValidation from "../../utils/formvalidation";
+import handle_form_validation from "../../utils/email_password_Valid_or_Not";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ROOT } from "../../../route";
@@ -14,36 +14,24 @@ const RegistrationForm = () => {
   const lang = useSelector(store => store.configLang.Language);
   const { email } = useContext(EmailContext);
   const [useremail, setUserEmail] = useState(email);
-  const [isvalid, setValid] = useState(null);
+  const [validation_message, setValidation_message] = useState(null);
   const [hide, setHide] = useState(false);
   const emailref = useRef(null);
-  const [password,setPassword] = useState(null);
+  const [password, setPassword] = useState(null);
   const nameref = useRef(null);
   const navigate = useNavigate();
   const userobj = useSelector((store) => store.user);
-  const [profileImg,setProfileImg] = useState(null);
-
-  function handleValid() {
-    const message = formValidation(
-      emailref.current.value,
-      password
-    );
-    setValid(message);
-    if (message) return;
-
-    //sign up logic
-    firebaseContext.createNewUser(emailref.current.value,password,nameref.current.value,profileImg,setHide,setValid)
-  }
+  const [profileImg, setProfileImg] = useState(null);
 
   return (
     <div>
       {!hide && (
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-5">
           <h1 className="text-4xl font-semibold text-gray-800">
-         {language[lang].registration_form_title}
+            {language[lang].registration_form_title}
           </h1>
           <p className="text-xl text-gray-700">
-          {language[lang].registration_form_heading}
+            {language[lang].registration_form_heading}
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -66,20 +54,35 @@ const RegistrationForm = () => {
               }}
             />
             <input
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               type="text"
               className="border border-black h-12 rounded px-3"
               placeholder={language[lang].enter_password}
             />
-            <p className="text-red-600 font-medium">{isvalid}</p>
+            {
+              validation_message &&
+              <p className="text-red-600 font-medium"><i className="fa-solid fa-circle-exclamation"></i> {validation_message}</p>
+            }
             {/* <label htmlFor="profileImg001">Add profile image</label>
             <input type="file" id="profileImg001" onChange={(e)=> setProfileImg(e.target.files[0])} /> */}
 
             <button
               className="h-16 bg-red-700 rounded text-white font-normal text-2xl"
-              onClick={handleValid}
+              onClick={() => handle_form_validation(
+                {
+                  email: emailref.current.value,
+                  password: password,
+                  name:nameref.current.value,
+                  profileImg,
+                  setHide,
+                  setValidation_message,
+                  location: "registrationform",
+                  lang,
+                  firebaseContext
+                }
+              )}
             >
-             {language[lang].next}
+              {language[lang].next}
             </button>
           </form>
         </div>
