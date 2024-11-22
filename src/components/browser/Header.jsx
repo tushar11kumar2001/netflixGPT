@@ -1,6 +1,5 @@
 import React from 'react'
 import { SUPPORT_LANG, logoURL, profileLogoURL } from "../../utils/constant";
-import { useEffect, useState } from "react";
 import { useFirebaseContext } from "../../utils/firebaseContext";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggle } from '../../redux/gptSlice';

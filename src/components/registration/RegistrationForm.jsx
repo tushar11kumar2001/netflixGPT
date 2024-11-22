@@ -1,13 +1,9 @@
 import { useRef, useState } from "react";
-// import Header2 from "./Header2";
 import { EmailContext } from "../../utils/emailContext";
 import { useContext } from "react";
 import formValidation from "../../utils/formvalidation";
-
-
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 import { ROOT } from "../../../route";
 import { useFirebaseContext } from "../../utils/firebaseContext";
 import { language } from "../../utils/language";
@@ -41,7 +37,6 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      {/* <Header2 btn={hide === false ? "Sign In" : "Sign Out"} /> */}
       {!hide && (
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-5">
           <h1 className="text-4xl font-semibold text-gray-800">

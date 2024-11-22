@@ -9,6 +9,7 @@ import Browser from "./components/browser/Browser";
 import { useFirebaseContext } from "./utils/firebaseContext";
 import { useDispatch } from "react-redux";
 import { changeLanguage } from "./redux/configLangSlice";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -29,6 +30,7 @@ function App() {
           <Route path="/browser" element={<Browser />} />
         </Routes>
       </EmailContext.Provider>
+      <Footer/>
     </div>
   );
 }

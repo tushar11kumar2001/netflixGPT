@@ -26,8 +26,23 @@ export const language = {
         registration_form_heading:"Just a few more steps and you're done! We hate paperwork, too",
         account_created:"Account Created",
         use_email_to_access:"Use this email to access to your account",
-        
-       
+        FAQ:"FAQ",
+        investor_relations:"Investor Relations",
+        privacy:"Privacy",
+        speed_test:"Speed Test",
+        help_center:"Help center",
+        jobs:"Jobs",
+        cookie_preferences:"Cookie Preferences",
+        legal_notices:"Legal Notices",
+        account:"Account",
+        ways_to_watch:"Ways to Watch",
+        corporate_information:"Corporate Information",
+        only_on_netflix:"Only on Netflix",
+        media_centre:"Media Centre",
+        terms_of_use:"Terms of Use",
+        contact_us:"Contact Us",
+        question:"Questions? ",
+        call:"Call"
     },
     hi :{
        next:"आगे बढ़ें",
@@ -55,6 +70,23 @@ export const language = {
        registration_form_title:"अपनी सदस्यता शुरू करने के लिए पासवर्ड बनाएं",
        registration_form_heading:"बस कुछ ही कदम और बचे हैं, और आप तैयार हैं! हमें भी कागजी काम पसंद नहीं।",
        account_created:"खाता बनाया गया",
-       use_email_to_access:"अपने खाते तक पहुंचने के लिए इस ईमेल का उपयोग करें"
+       use_email_to_access:"अपने खाते तक पहुंचने के लिए इस ईमेल का उपयोग करें",
+       FAQ:"अक्सर पूछे जाने वाले प्रश्न",
+       investor_relations:"इन्वेस्टर रिलेशंस",
+       privacy:"प्राइवेसी",
+       speed_test:"स्पीड टेस्ट",
+       help_center:"हेल्प सेंटर",
+       jobs:"नौकरियाँ",
+       cookie_preferences:"कुकी प्राथमिकताएँ",
+       legal_notices:"कानूनी नोटिस",
+       account:"खाता",
+       ways_to_watch:"देखने के तरीके",
+       corporate_information:"कॉर्पोरेट जानकारी",
+       only_on_netflix:"केवल नेटफ्लिक्स पर",
+       media_centre:"मीडिया केंद्र",
+       terms_of_use:"उपयोग की शर्तें",
+       contact_us:"संपर्क करें",
+        question:" प्रश्न? ",
+        call:"कॉल"
     } 
 }
