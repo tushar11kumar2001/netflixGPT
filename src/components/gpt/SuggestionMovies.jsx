@@ -9,23 +9,23 @@ import { Loader } from '../../utils/constant'
 
 const SuggestionMovies = () => {
   const dispatch = useDispatch();
-  const suggestedMovies = useSelector(store => store.suggestedMovies.moviesList)
-  const suggestedMoviesData = useSelector(store => store.suggestedMovies.movieData)
-  const loading = useSelector(store => store.suggestedMovies.loading)
-  if (!suggestedMovies) return;
+
+  const suggestedMovies = useSelector(store => store.suggestedMovies.moviesList);
+  const suggestedMoviesData = useSelector(store => store.suggestedMovies.movieData);
+  const loading = useSelector(store => store.suggestedMovies.loading);
+
   useEffect(()=>{
+  if (!suggestedMovies) return;
     suggestedMovies.length !== 0 && suggestedMovies.forEach((movie) => {
       searchMovies(movie).then((data) => dispatch(addMoviesData({ "name": data.original_title, "poster": data.poster_path })))
     })
 
-    return ()=>{
-      dispatch(emptyMovieData())
-    }
+    return ()=>{dispatch(emptyMovieData())}
   },[suggestedMovies])
 
-  return (
+  if (!suggestedMovies) return;
 
- 
+  return (
 
     <div className='flex gap-10 justify-center mt-16'>
 

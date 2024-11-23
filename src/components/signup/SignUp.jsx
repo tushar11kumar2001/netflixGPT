@@ -1,8 +1,6 @@
-
-
 import { backgroundLogoURL } from "../../utils/constant";
 import Header from "../login/Header";
-import Main from "./Main";
+import Body from "./Body";
 
 const SignUp = () => {
   return (
@@ -13,7 +11,7 @@ const SignUp = () => {
       <div className="absolute w-full"><Header/></div>
       
       <div className="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
-        <Main />
+        <Body />
       </div>
     </div>
   );

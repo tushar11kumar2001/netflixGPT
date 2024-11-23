@@ -10,18 +10,18 @@ import { language } from "../../utils/language.js";
 
 const Login = () => {
   const navigate = useNavigate();
-  const firebaseContext = useFirebaseContext();
-
   const email = useRef();
   const password = useRef();
   const [validation_message, setValidation_message] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const firebaseContext = useFirebaseContext();
 
   const userObj = useSelector((store) => store.user);
   const lang = useSelector(store => store.configLang.Language)
 
-  useEffect(() => { if (userObj?.uid) navigate(ROOT.BROWSER) }, [userObj]) //to check user logged in or not 
   const handleShowPassword = () => { setShowPassword(!showPassword) }
+
+  useEffect(() => { if (userObj?.uid) navigate(ROOT.BROWSER) }, [userObj]) //to check user logged in or not 
 
 
   return (

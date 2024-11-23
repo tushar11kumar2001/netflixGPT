@@ -1,8 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
-import nowPlayingMoviesReducer from "./nowPlayingMoviesSlice"
-import popularMoviesReducer from "./popularMoviesSlice"
-import topRatedMoviesReducer from "./topRatedMoviesSlice"
+import MoviesReducer from "./MoviesSlice"
 import gptReducer from "./gptSlice"
 import configLangReducer from "./configLangSlice"
 import suggestMoviesReducers from "./suggestMoviesSlice"
@@ -10,9 +8,7 @@ import suggestMoviesReducers from "./suggestMoviesSlice"
  const appStore = configureStore({
     reducer:{
       user:userReducer,
-      nowPlayingMoviesList: nowPlayingMoviesReducer,
-      popularMoviesList: popularMoviesReducer,
-      topRatedMoviesList: topRatedMoviesReducer,
+      MoviesList: MoviesReducer,
       gptScreen: gptReducer,
       configLang:configLangReducer,
       suggestedMovies: suggestMoviesReducers,

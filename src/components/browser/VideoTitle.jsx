@@ -1,16 +1,11 @@
-import { useSelector } from "react-redux"
 import { IMG_CDN_URL } from "../../utils/constant"
 import { language } from "../../utils/language"
-import { Link, useNavigate } from "react-router-dom"
 
 const VideoTitle = ({ title, description, img, lang, trailerKey }) => {
-  // {console.log(IMG_CDN_URL + img)}
-
   const navigateToExternalSite = () => {
     const newTab = window.open('about:blank', '_blank');
     newTab.location.href = `https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1`;
   };
-
 
   return (
     <div className='absolute w-1/2 text-white mt-96 ml-24 z-10 '>

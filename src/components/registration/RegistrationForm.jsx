@@ -10,18 +10,20 @@ import { language } from "../../utils/language";
 
 
 const RegistrationForm = () => {
-  const firebaseContext = useFirebaseContext();
-  const lang = useSelector(store => store.configLang.Language);
-  const { email } = useContext(EmailContext);
-  const [useremail, setUserEmail] = useState(email);
   const [validation_message, setValidation_message] = useState(null);
+  const [password, setPassword] = useState(null);
   const [hide, setHide] = useState(false);
   const emailref = useRef(null);
-  const [password, setPassword] = useState(null);
   const nameref = useRef(null);
   const navigate = useNavigate();
-  const userobj = useSelector((store) => store.user);
   const [profileImg, setProfileImg] = useState(null);
+
+  const firebaseContext = useFirebaseContext();
+  const { email } = useContext(EmailContext);
+  const [useremail, setUserEmail] = useState(email);
+
+  const userobj = useSelector((store) => store.user);
+  const lang = useSelector(store => store.configLang.Language);
 
   return (
     <div>

@@ -8,9 +8,9 @@ import { changeLanguage } from '../../redux/configLangSlice';
 
 const Header = ({ userobj}) => {
     // const [photoURL, setPhotoURL] = useState(null);
+    const dispatch = useDispatch()
     const firebaseContext = useFirebaseContext()
     const gptScreen = useSelector(store => store.gptScreen.toggleGPTScreen)
-    const dispatch = useDispatch()
     // useEffect(() => {
     //     firebaseContext.getUser(userobj.uid)
     //         .then(result => firebaseContext.getImageURL(result?.docs[0]?.data()?.imageURL)
@@ -21,8 +21,7 @@ const Header = ({ userobj}) => {
     const handleToggleGPTScreen = () => dispatch(toggle());
     const handleLangChange = (e) => {
         dispatch(changeLanguage(e.target.value));
-        localStorage.setItem("language",e.target.value);
-        
+        localStorage.setItem("language",e.target.value);   
     }
     
     return (

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import VideoTitle from './VideoTitle';
 import VideoBackground from './VideoBackground';
-import { logo, trailer } from '../../utils/getNowPlayingMovies';
+import { logo, trailer } from '../../utils/getMoviesData';
 
 const PrimaryContainer = ({ lang }) => {
   const [idx, setIdx] = useState(null);
@@ -10,11 +10,10 @@ const PrimaryContainer = ({ lang }) => {
   const [mainMovie, setMainMovie] = useState(null);
   const [trailerKey, setTrailerKey] = useState(null);
 
-  const movies = useSelector(store => store.nowPlayingMoviesList?.data);
+  const movies = useSelector(store => store.MoviesList?.now_playing_movies);
 
   useEffect(() => {
     if (!movies || movies.length === 0) return;
-
     if (!idx) setIdx(Math.floor(Math.random() * movies.length));
     setMainMovie(movies[idx]);
     if (mainMovie) {

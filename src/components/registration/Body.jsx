@@ -6,7 +6,7 @@ import { language } from '../../utils/language';
 
 
 
-const Main = () => {
+const Body = () => {
   const navigate = useNavigate();
   const lang = useSelector(store => store.configLang.Language);
   return (
@@ -34,4 +34,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Body

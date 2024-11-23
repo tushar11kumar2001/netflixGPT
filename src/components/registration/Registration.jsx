@@ -1,12 +1,12 @@
-
 import Header from "../login/Header"
-import Main from "./Main";
+import Body from "./Body";
+
 const Registration = () => {
 
   return (
     <div className="h-screen">
      <Header/>
-     <Main />
+     <Body />
     </div>
   );
 };

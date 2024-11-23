@@ -13,13 +13,15 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   const [email, setEmail] = useState("");
-  const firebaseContext = useFirebaseContext();
   const dispatch = useDispatch();
   const current_location = useLocation();
+  const firebaseContext = useFirebaseContext();
+
   useEffect(() => {
-  firebaseContext.authChanged();
-   dispatch(changeLanguage(localStorage.getItem("language")))
+      firebaseContext.authChanged();
+      dispatch(changeLanguage(localStorage.getItem("language")))
   }, []);
+  
   return (
     <div className="">
       <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>

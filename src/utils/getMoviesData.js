@@ -1,16 +1,17 @@
 import { API_option } from "./constant";
 
-export const getNowPlayingMovies = async () => {
+export const getMovies = async (category) => {
+  
   try {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?page=1",
+      `https://api.themoviedb.org/3/movie/${category}?page=1`,
       API_option
     );
     const response = await data.json();
-    // console.log(response);
     return response.results;
-  } catch (e) {
-    console.log("error to fetch get now playing movies ", e);
+  } 
+  catch (e) {
+    console.log("error to fetch  movies ", e);
   }
 };
 

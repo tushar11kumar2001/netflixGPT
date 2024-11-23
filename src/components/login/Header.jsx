@@ -9,6 +9,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const current_path = useLocation();
+
   const lang = useSelector(store => store.configLang.Language)
 
   const handleLanguageChange = (e) => {
@@ -16,6 +17,7 @@ const Header = () => {
     localStorage.setItem("language",e.target.value);
 
   }
+  
   return (
     <div className="w-full flex justify-between items-center  pl-44 pr-10 py-2">
       <img className=" w-44 h-20 " src={logoURL} alt="netflix logo" />

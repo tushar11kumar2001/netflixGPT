@@ -7,9 +7,10 @@ import { addMovies, emptyMovieData, updateLoading } from '../../redux/suggestMov
 const GPTSearchBar = ({lang}) => {
   const dispatch = useDispatch();
   const searchRef = useRef();
-  const handlegeminiAI = (query) => {
 
-    dispatch(updateLoading())
+  const handlegeminiAI = (query) => {
+    console.log("handle gemini AI");
+    dispatch(updateLoading());
     run(query).then((response) => {
       const arr = response.split(",");
       dispatch(addMovies(arr));
@@ -18,6 +19,7 @@ const GPTSearchBar = ({lang}) => {
 
     })
   }
+  
   return (
     <div className='flex justify-center bg-black bg-opacity-75 w-1/2  p-3 mx-auto rounded-md'>
       <form
