@@ -40,7 +40,7 @@ const MovieList = ({ title, movies }) => {
                     </div>
                 ))}
             </div>
-            <style jsx>{`
+            <style jsx="true">{`
                 .no-scrollbar::-webkit-scrollbar {
                     display: none;
                 }

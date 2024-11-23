@@ -11,8 +11,10 @@ const PrimaryContainer = ({ lang }) => {
   const [trailerKey, setTrailerKey] = useState(null);
 
   const movies = useSelector(store => store.nowPlayingMoviesList?.data);
-  if (!movies) return;
+
   useEffect(() => {
+    if (!movies || movies.length === 0) return;
+
     if (!idx) setIdx(Math.floor(Math.random() * movies.length));
     setMainMovie(movies[idx]);
     if (mainMovie) {
@@ -20,10 +22,11 @@ const PrimaryContainer = ({ lang }) => {
       trailer(mainMovie?.id).then((data) => setTrailerKey(data))
     }
   })
+  if (!movies || movies.length === 0) return;
 
   return (
     <div className='relative overflow-x-hidden '>
-      {mainMovie && <VideoTitle title={mainMovie?.original_title} description={mainMovie?.overview} img={image} lang={lang} trailerKey={trailerKey}/>}
+      {mainMovie && <VideoTitle title={mainMovie?.original_title} description={mainMovie?.overview} img={image} lang={lang} trailerKey={trailerKey} />}
       {mainMovie && <VideoBackground trailerKey={trailerKey} />}
     </div>
   )

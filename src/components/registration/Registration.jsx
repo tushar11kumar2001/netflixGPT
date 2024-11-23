@@ -4,7 +4,7 @@ import Main from "./Main";
 const Registration = () => {
 
   return (
-    <div className="relative h-screen">
+    <div className="h-screen">
      <Header/>
      <Main />
     </div>
