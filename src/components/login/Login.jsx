@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { backgroundLogoURL } from "../../utils/constant.js";
 import { language } from "../../utils/language.js";
 
-const Login = ({lang}) => {
+const Login = ({lang,setLang}) => {
   const navigate = useNavigate();
   const email = useRef();
   const password = useRef();
@@ -29,7 +29,7 @@ const Login = ({lang}) => {
       style={{ backgroundImage: `url(${backgroundLogoURL})` }}
     >
       <div className="bg-black bg-opacity-65 w-full h-full absolute "></div>
-      <div className="absolute w-full"><Header lang={lang}/></div>
+      <div className="absolute w-full"><Header lang={lang} setLang={setLang}/></div>
 
       <form
         onSubmit={(e) => { e.preventDefault() }}

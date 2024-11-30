@@ -16,22 +16,22 @@ function App() {
   const dispatch = useDispatch();
   const current_location = useLocation();
   const firebaseContext = useFirebaseContext();
-  const lang = useSelector(store=>store.configLang.Language)
+  const [lang,setLang] = useState("en");
 
   useEffect(() => {
       firebaseContext.authChanged();
-      dispatch(changeLanguage(localStorage.getItem("language")))
+      setLang(localStorage.getItem("language"))
   }, []);
   
   return (
     <div className="">
       <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>
         <Routes>
-          <Route path="/" element={<Login lang={lang}/>} />,
-          <Route path="/in/" element={<SignUp lang={lang}/>} />
-          <Route path="/signup/registration" element={<Registration lang={lang}/>} />,
-          <Route path="/signup/regform" element={<RegistrationForm lang={lang}/>} />,
-          <Route path="/browser" element={<Browser lang={lang}/>} />
+          <Route path="/" element={<Login lang={lang} setLang={setLang}/>} />,
+          <Route path="/in/" element={<SignUp lang={lang} setLang={setLang}/>} />
+          <Route path="/signup/registration" element={<Registration lang={lang} setLang={setLang}/>} />,
+          <Route path="/signup/regform" element={<RegistrationForm lang={lang} />} />,
+          <Route path="/browser" element={<Browser lang={lang} setLang={setLang}/>} />
         </Routes>
       </EmailContext.Provider>
       {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer lang={lang}/> :""}

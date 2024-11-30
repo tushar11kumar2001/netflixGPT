@@ -8,7 +8,7 @@ import PrimaryContainer from "./PrimaryContainer";
 import { MoviesListThunks } from "../../redux/MoviesSlice";
 import GPTScreen from "../gpt/GPTScreen";
 
-const Browser = ({lang}) => {
+const Browser = ({lang,setLang}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const Browser = ({lang}) => {
   return (
     <div className="">
       <div className="fixed z-20 w-full">
-        <Header userobj={userobj} />
+        <Header userobj={userobj} setLang={setLang}/>
       </div>
 
       {
