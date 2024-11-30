@@ -23,18 +23,22 @@ function App() {
   }, []);
   
   return (
-    <div className="">
-      <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>
-        <Routes>
-          <Route path="/" element={<Login />} />,
-          <Route path="/in/" element={<SignUp />} />
-          <Route path="/signup/registration" element={<Registration />} />,
-          <Route path="/signup/regform" element={<RegistrationForm />} />,
-          <Route path="/browser" element={<Browser />} />
-        </Routes>
-      </EmailContext.Provider>
-      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer/> :""}
-    </div>
+    // <div className="">
+    //   <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>
+    //     <Routes>
+    //       <Route path="/" element={<Login />} />,
+    //       <Route path="/in/" element={<SignUp />} />
+    //       <Route path="/signup/registration" element={<Registration />} />,
+    //       <Route path="/signup/regform" element={<RegistrationForm />} />,
+    //       <Route path="/browser" element={<Browser />} />
+    //     </Routes>
+    //   </EmailContext.Provider>
+    //   {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer/> :""}
+    // </div>
+
+    <>
+    <h1 className="text-5xl text-red-700">TUSHAR KUMAR</h1>
+    </>
   );
 }
 
