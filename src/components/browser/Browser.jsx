@@ -8,12 +8,11 @@ import PrimaryContainer from "./PrimaryContainer";
 import { MoviesListThunks } from "../../redux/MoviesSlice";
 import GPTScreen from "../gpt/GPTScreen";
 
-const Browser = () => {
+const Browser = ({lang}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const userobj = useSelector((store) => store.user);
-  const lang = useSelector(store => store.configLang.Language)
   const gptScreen = useSelector(store => store.gptScreen.toggleGPTScreen)
   
   useEffect(() => { if (!userobj?.uid) navigate(ROOT.LOGIN) }, [userobj]);

@@ -5,12 +5,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ROOT } from "../../../route";
 import { language } from "../../utils/language";
 
-const Header = () => {
+const Header = ({lang}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const current_path = useLocation();
 
-  const lang = useSelector(store => store.configLang.Language)
 
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -38,7 +37,7 @@ const Header = () => {
               navigate(ROOT.LOGIN);
             }}
           >
-            Sign in 
+            {language[lang].sign_in}
           </button>
         }
       </div>

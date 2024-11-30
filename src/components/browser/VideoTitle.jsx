@@ -19,7 +19,7 @@ const VideoTitle = ({ title, description, img, lang, trailerKey }) => {
         <button
           onClick={navigateToExternalSite}
           className="px-7 py-2 bg-white text-black text-2xl font-semibold rounded-md">
-          <i className="fa-solid fa-play mr-2"></i> {language[lang].play?language[lang].play:""}
+          <i className="fa-solid fa-play mr-2"></i> {language[lang].play}
         </button>
 
 

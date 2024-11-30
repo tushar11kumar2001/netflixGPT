@@ -7,7 +7,7 @@ import { EmailContext } from "./utils/emailContext";
 import { useEffect, useState } from "react";
 import Browser from "./components/browser/Browser";
 import { useFirebaseContext } from "./utils/firebaseContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "./redux/configLangSlice";
 import Footer from "./components/footer/Footer";
 
@@ -16,6 +16,7 @@ function App() {
   const dispatch = useDispatch();
   const current_location = useLocation();
   const firebaseContext = useFirebaseContext();
+  const lang = useSelector(store=>store.configLang.Language)
 
   useEffect(() => {
       firebaseContext.authChanged();
@@ -26,14 +27,14 @@ function App() {
     <div className="">
       <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>
         <Routes>
-          <Route path="/" element={<Login />} />,
-          <Route path="/in/" element={<SignUp />} />
-          <Route path="/signup/registration" element={<Registration />} />,
-          <Route path="/signup/regform" element={<RegistrationForm />} />,
-          <Route path="/browser" element={<Browser />} />
+          <Route path="/" element={<Login lang={lang}/>} />,
+          <Route path="/in/" element={<SignUp lang={lang}/>} />
+          <Route path="/signup/registration" element={<Registration lang={lang}/>} />,
+          <Route path="/signup/regform" element={<RegistrationForm lang={lang}/>} />,
+          <Route path="/browser" element={<Browser lang={lang}/>} />
         </Routes>
       </EmailContext.Provider>
-      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer/> :""}
+      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer lang={lang}/> :""}
     </div>
   );
 }
