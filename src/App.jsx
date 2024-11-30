@@ -7,7 +7,7 @@ import { EmailContext } from "./utils/emailContext";
 import { useEffect, useState } from "react";
 import Browser from "./components/browser/Browser";
 import { useFirebaseContext } from "./utils/firebaseContext";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeLanguage } from "./redux/configLangSlice";
 import Footer from "./components/footer/Footer";
 
@@ -16,25 +16,24 @@ function App() {
   const dispatch = useDispatch();
   const current_location = useLocation();
   const firebaseContext = useFirebaseContext();
-  const [lang,setLang] = useState("en");
 
   useEffect(() => {
       firebaseContext.authChanged();
-      setLang(localStorage.getItem("language"))
+      dispatch(changeLanguage(localStorage.getItem("language")))
   }, []);
   
   return (
     <div className="">
       <EmailContext.Provider value={{ email: email, setEmail: setEmail }}>
         <Routes>
-          <Route path="/" element={<Login lang={lang} setLang={setLang}/>} />,
-          <Route path="/in/" element={<SignUp lang={lang} setLang={setLang}/>} />
-          <Route path="/signup/registration" element={<Registration lang={lang} setLang={setLang}/>} />,
-          <Route path="/signup/regform" element={<RegistrationForm lang={lang} />} />,
-          <Route path="/browser" element={<Browser lang={lang} setLang={setLang}/>} />
+          <Route path="/" element={<Login />} />,
+          <Route path="/in/" element={<SignUp />} />
+          <Route path="/signup/registration" element={<Registration />} />,
+          <Route path="/signup/regform" element={<RegistrationForm />} />,
+          <Route path="/browser" element={<Browser />} />
         </Routes>
       </EmailContext.Provider>
-      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer lang={lang}/> :""}
+      {current_location.pathname === "/" || current_location.pathname === "/in/" || current_location.pathname === "/browser" ? <Footer/> :""}
     </div>
   );
 }

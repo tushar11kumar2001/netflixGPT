@@ -1,12 +1,12 @@
 import Header from "../login/Header"
 import Body from "./Body";
 
-const Registration = ({lang,setLang}) => {
+const Registration = () => {
 
   return (
     <div className="h-screen">
-     <Header lang={lang} setLang={setLang}/>
-     <Body lang={lang}/>
+     <Header/>
+     <Body />
     </div>
   );
 };

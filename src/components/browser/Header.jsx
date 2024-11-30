@@ -6,7 +6,7 @@ import { toggle } from '../../redux/gptSlice';
 import { changeLanguage } from '../../redux/configLangSlice';
 
 
-const Header = ({ userobj,setLang}) => {
+const Header = ({ userobjz}) => {
     // const [photoURL, setPhotoURL] = useState(null);
     const dispatch = useDispatch()
     const firebaseContext = useFirebaseContext()
@@ -20,7 +20,7 @@ const Header = ({ userobj,setLang}) => {
     const handlelogout = () =>  firebaseContext.logout();
     const handleToggleGPTScreen = () => dispatch(toggle());
     const handleLangChange = (e) => {
-        setLang(e.target.value);
+        dispatch(changeLanguage(e.target.value));
         localStorage.setItem("language",e.target.value);   
     }
     

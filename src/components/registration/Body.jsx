@@ -6,8 +6,9 @@ import { language } from '../../utils/language';
 
 
 
-const Body = ({lang}) => {
+const Body = () => {
   const navigate = useNavigate();
+  const lang = useSelector(store => store.configLang.Language);
   return (
     <main>
       <div className="flex flex-col gap-5 justify-center items-center w-1/3 p-5   left-2/4 absolute top-2/4 translate-y-[-50%] translate-x-[-50%]">

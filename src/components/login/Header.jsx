@@ -5,14 +5,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ROOT } from "../../../route";
 import { language } from "../../utils/language";
 
-const Header = ({lang,setLang}) => {
+const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const current_path = useLocation();
 
+  const lang = useSelector(store => store.configLang.Language)
 
   const handleLanguageChange = (e) => {
-    setLang(e.target.value);
+    dispatch(changeLanguage(e.target.value));
     localStorage.setItem("language",e.target.value);
 
   }

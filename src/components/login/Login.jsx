@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { backgroundLogoURL } from "../../utils/constant.js";
 import { language } from "../../utils/language.js";
 
-const Login = ({lang,setLang}) => {
+const Login = () => {
   const navigate = useNavigate();
   const email = useRef();
   const password = useRef();
@@ -17,6 +17,7 @@ const Login = ({lang,setLang}) => {
   const firebaseContext = useFirebaseContext();
 
   const userObj = useSelector((store) => store.user);
+  const lang = useSelector(store => store.configLang.Language)
 
   const handleShowPassword = () => { setShowPassword(!showPassword) }
 
@@ -29,7 +30,7 @@ const Login = ({lang,setLang}) => {
       style={{ backgroundImage: `url(${backgroundLogoURL})` }}
     >
       <div className="bg-black bg-opacity-65 w-full h-full absolute "></div>
-      <div className="absolute w-full"><Header lang={lang} setLang={setLang}/></div>
+      <div className="absolute w-full"><Header/></div>
 
       <form
         onSubmit={(e) => { e.preventDefault() }}

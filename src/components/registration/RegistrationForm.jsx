@@ -9,7 +9,7 @@ import { useFirebaseContext } from "../../utils/firebaseContext";
 import { language } from "../../utils/language";
 
 
-const RegistrationForm = ({lang}) => {
+const RegistrationForm = () => {
   const [validation_message, setValidation_message] = useState(null);
   const [password, setPassword] = useState(null);
   const [hide, setHide] = useState(false);
@@ -23,6 +23,7 @@ const RegistrationForm = ({lang}) => {
   const [useremail, setUserEmail] = useState(email);
 
   const userobj = useSelector((store) => store.user);
+  const lang = useSelector(store => store.configLang.Language);
 
   return (
     <div>

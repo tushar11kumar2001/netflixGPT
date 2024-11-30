@@ -7,13 +7,14 @@ import { EmailContext } from '../../utils/emailContext';
 import { useSelector } from 'react-redux';
 import { language } from '../../utils/language';
 
-const Body = ({lang}) => {
+const Body = () => {
   const [validation_message, setValidation_message] = useState(null);
   const email = useRef(null);
   const {setEmail} = useContext(EmailContext); //destructuring of set function of email from email context..
   
   const navigate = useNavigate();
 
+  const lang = useSelector(store => store.configLang.Language);  
 
 
   return (
