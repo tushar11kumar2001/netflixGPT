@@ -38,7 +38,7 @@ const Header = () => {
               navigate(ROOT.LOGIN);
             }}
           >
-            {language[lang].sign_in}
+            {language[lang].sign_in?language[lang].sign_in:""}
           </button>
         }
       </div>
