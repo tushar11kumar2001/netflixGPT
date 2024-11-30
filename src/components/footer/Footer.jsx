@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='relative '>
     <img className='absolute' src="../../../public/curve.png" alt="curve" />
     <div className='absolute top-[75px] bg-black  w-full text-gray-400 py-20 px-24'>
-      <h2 className='mb-10 text-lg'>{language[lang].question?language[lang].question:""+language[lang].call?language[lang].call:""} 000-800-919-1694</h2>
+      <h2 className='mb-10 text-lg'>Question call? 000-800-919-1694</h2>
 
       {/* <div className='flex justify-between'>
       <div>

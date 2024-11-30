@@ -86,7 +86,7 @@ export const language = {
        media_centre:"मीडिया केंद्र",
        terms_of_use:"उपयोग की शर्तें",
        contact_us:"संपर्क करें",
-        question:" प्रश्न? ",
-        call:"कॉल"
+       question:" प्रश्न? ",
+       call:"कॉल"
     } 
 }
