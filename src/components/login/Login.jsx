@@ -37,7 +37,7 @@ const Login = () => {
         className=
         "absolute  left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] bg-black w-3/12 p-12 text-white bg-opacity-80 rounded-lg "
       >
-        <h1 className="font-medium mb-6 text-3xl">{language[lang].sign_in?language[lang].sign_in:""}</h1>
+        <h1 className="font-medium mb-6 text-3xl">Sign in</h1>
         <input
           ref={email}
           className="w-full p-4 my-4 bg-gray-600 rounded-lg outline-none hover:border-2 border-red-800"
