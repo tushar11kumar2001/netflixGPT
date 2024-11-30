@@ -75,7 +75,7 @@ const Login = () => {
           }
         )}
         >
-          {language[lang].sign_in?language[lang].sign_in:""}
+          Sign in
         </button>
 
         <p className="py-4">
