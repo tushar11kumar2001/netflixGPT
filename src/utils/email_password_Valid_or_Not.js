@@ -3,11 +3,11 @@ import { ROOT } from "../../route";
 
 export const email_password_Valid_or_Not = (lang, email, password) => {
   const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
-  if (!validEmail) return language[lang].email_validation_message;
+  if (!validEmail) return language[lang]?.email_validation_message;
   if (password !== undefined) {
     const validPassword =
       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
-    if (!validPassword) return language[lang].password_validation_message
+    if (!validPassword) return language[lang]?.password_validation_message
   }
 };
 

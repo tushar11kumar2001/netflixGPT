@@ -18,16 +18,16 @@ const Body = () => {
           className="w-2/4 h-20"
         />
         <h1 className="  text-4xl font-semibold text-gray-800 text-center">
-          {language[lang].registration_title}
+          {language[lang]?.registration_title}
         </h1>
         <p className="w-[70%] text-center text-lg font-normal text-slate-700">
-          {language[lang].registration_paragraph}
+          {language[lang]?.registration_paragraph}
         </p>
         <button
           className="w-3/4 bg-red-700 h-16 rounded text-white font-medium text-xl"
           onClick={() => navigate(ROOT.SIGNUPFORM)}
         >
-          {language[lang].next}
+          {language[lang]?.next}
         </button>
       </div>
     </main>

@@ -37,19 +37,19 @@ const Login = () => {
         className=
         "absolute  left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] bg-black w-3/12 p-12 text-white bg-opacity-80 rounded-lg "
       >
-        <h1 className="font-medium mb-6 text-3xl">{language[lang].sign_in}</h1>
+        <h1 className="font-medium mb-6 text-3xl">{language[lang]?.sign_in}</h1>
         <input
           ref={email}
           className="w-full p-4 my-4 bg-gray-600 rounded-lg outline-none hover:border-2 border-red-800"
           type="text"
-          placeholder={language[lang].enter_email}
+          placeholder={language[lang]?.enter_email}
         />
         <div className="flex justify-between items-center pr-3  w-full  my-4 bg-gray-600 rounded-lg hover:border-2 border-red-800">
           <input
             ref={password}
             className="p-4 w-11/12  bg-gray-600 rounded-lg outline-none "
             type={showPassword ? "text" : "password"}
-            placeholder={language[lang].enter_password}
+            placeholder={language[lang]?.enter_password}
           />
           {
           showPassword ? 
@@ -75,7 +75,7 @@ const Login = () => {
           }
         )}
         >
-          {language[lang].sign_in}
+          {language[lang]?.sign_in}
         </button>
 
         <p className="py-4">
@@ -86,7 +86,7 @@ const Login = () => {
               navigate(ROOT.SIGNUP);
             }}
           >
-            {language[lang].sign_up}
+            {language[lang]?.sign_up}
           </span>
         </p>
       </form>

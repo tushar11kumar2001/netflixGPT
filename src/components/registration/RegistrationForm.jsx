@@ -30,10 +30,10 @@ const RegistrationForm = () => {
       {!hide && (
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-5">
           <h1 className="text-4xl font-semibold text-gray-800">
-            {language[lang].registration_form_title}
+            {language[lang]?.registration_form_title}
           </h1>
           <p className="text-xl text-gray-700">
-            {language[lang].registration_form_heading}
+            {language[lang]?.registration_form_heading}
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -43,13 +43,13 @@ const RegistrationForm = () => {
               ref={nameref}
               type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder={language[lang].enter_name}
+              placeholder={language[lang]?.enter_name}
             />
             <input
               ref={emailref}
               type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder={language[lang].enter_email}
+              placeholder={language[lang]?.enter_email}
               value={useremail}
               onChange={(e) => {
                 setUserEmail(e.target.value);
@@ -59,7 +59,7 @@ const RegistrationForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               type="text"
               className="border border-black h-12 rounded px-3"
-              placeholder={language[lang].enter_password}
+              placeholder={language[lang]?.enter_password}
             />
             {
               validation_message &&
@@ -84,7 +84,7 @@ const RegistrationForm = () => {
                 }
               )}
             >
-              {language[lang].next}
+              {language[lang]?.next}
             </button>
           </form>
         </div>
@@ -94,10 +94,10 @@ const RegistrationForm = () => {
         <div className="flex flex-col w-1/3  mx-auto mt-8 py-5 px-8 gap-10">
           <div>
             <h1 className="text-5xl font-semibold text-gray-800 mb-5">
-              {language[lang].account_created}
+              {language[lang]?.account_created}
             </h1>
             <p className="text-gray-800">
-              {language[lang].use_email_to_access}
+              {language[lang]?.use_email_to_access}
             </p>
           </div>
           <p className="font-semibold text-lg text-green-700">
@@ -109,7 +109,7 @@ const RegistrationForm = () => {
               navigate(ROOT.BROWSER);
             }}
           >
-            {language[lang].continue}
+            {language[lang]?.continue}
           </button>
         </div>
       )}

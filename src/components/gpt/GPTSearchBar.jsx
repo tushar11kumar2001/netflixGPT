@@ -30,10 +30,10 @@ const GPTSearchBar = ({lang}) => {
           ref={searchRef}
           type="text"
           className='col-span-9 h-14 rounded-md px-5'
-          placeholder={language[lang].gptPlaceHolder} />
+          placeholder={language[lang]?.gptPlaceHolder} />
         <button
           onClick={() => handlegeminiAI(searchRef.current.value)}
-          className='col-span-3 bg-red-600 rounded-md text-white text-xl font-semibold'>{language[lang].search}</button>
+          className='col-span-3 bg-red-600 rounded-md text-white text-xl font-semibold'>{language[lang]?.search}</button>
       </form>
     </div>
   )

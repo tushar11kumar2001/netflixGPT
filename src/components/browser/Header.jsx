@@ -6,7 +6,7 @@ import { toggle } from '../../redux/gptSlice';
 import { changeLanguage } from '../../redux/configLangSlice';
 
 
-const Header = ({ userobjz}) => {
+const Header = ({ userobj}) => {
     // const [photoURL, setPhotoURL] = useState(null);
     const dispatch = useDispatch()
     const firebaseContext = useFirebaseContext()
