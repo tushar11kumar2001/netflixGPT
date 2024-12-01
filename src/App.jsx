@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
       firebaseContext.authChanged();
-      dispatch(changeLanguage(localStorage.getItem("language")))
+      if(localStorage.getItem("language"))dispatch(changeLanguage(localStorage.getItem("language")));
   }, []);
   
   return (
