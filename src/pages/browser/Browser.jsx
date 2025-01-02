@@ -1,22 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { ROOT } from "../../../route";
 import { useEffect } from "react";
 import Header from "./Header";
 import SecondaryContainer from "./SecondaryContainer";
 import PrimaryContainer from "./PrimaryContainer";
 import { MoviesListThunks } from "../../redux/MoviesSlice";
-import GPTScreen from "../gpt/GPTScreen";
+import GPTScreen from "../../components/gpt/GPTScreen";
 
 const Browser = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const userobj = useSelector((store) => store.user);
   const lang = useSelector(store => store.configLang.Language)
   const gptScreen = useSelector(store => store.gptScreen.toggleGPTScreen)
-  
-  useEffect(() => { if (!userobj?.uid) navigate(ROOT.LOGIN) }, [userobj]);
+  const userobj = useSelector((store) => store.user);
+
   useEffect(() => { dispatch(MoviesListThunks()) }, [])
 
 

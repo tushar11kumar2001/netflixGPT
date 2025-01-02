@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { searchMovies } from '../../utils/searchMovies'
-import MovieCard from '../browser/MovieCard'
+import MovieCard from '../../pages/browser/MovieCard'
 import { addMoviesData, emptyMovieData } from '../../redux/suggestMoviesSlice'
 
 import { Loader } from '../../utils/constant'
