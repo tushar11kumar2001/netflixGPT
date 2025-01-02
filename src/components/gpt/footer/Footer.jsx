@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { language } from '../../utils/language';
+import { language } from '../../../utils/language';
 
 const Footer = () => {
     const lang = useSelector(store => store.configLang.Language);

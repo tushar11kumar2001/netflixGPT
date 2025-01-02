@@ -9,7 +9,7 @@ import Browser from "./pages/browser/Browser";
 import { useFirebaseContext } from "./utils/firebaseContext";
 import { useDispatch } from "react-redux";
 import { changeLanguage } from "./redux/configLangSlice";
-import Footer from "./pages/footer/Footer";
+import Footer from "./components/gpt/footer/Footer";
 import BrowserProtectedWraper from "./helper/BrowserProtectedWraper";
 
 function App() {
